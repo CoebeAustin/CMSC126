@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+<div id="progressbar"></div>
+<div id="scrollPath"></div>
+<div id="header">
+    <div class="container">
+        <nav>
+            <a href="{% url 'index' %}">
+            <img src="{% static 'images/my-logo-1.png' %}" class="logo">
+            </a>
+            <ul id="sidemenu">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'personal' %}">Personal</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <h1 id="first_id">Hi, I'm <span id="second_id"></span><br>A Student</h1>
+            <p>An aspiring cybersecurity/backend developer in the future, <br>
+            I plan to study more about internet security.</p>
+        </div>
+    </div>
+</div>
+
+    <div class="copyright">
+        <p>Coebe Austin Lupac © 2022</p>
+    </div>
+<script src="static/js/scrollbar.js"></script>
+<script src="static/js/typing.js"></script>
+</body>
+</html>

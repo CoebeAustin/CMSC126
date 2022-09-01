@@ -1,0 +1,62 @@
+<!-- really important to put because django will not load if this keyword is not included -->
+{% load static %} 
+<!-- starts and state that the file is html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Webpage Title -->
+    <title>Personal</title>
+    <!-- Link to the css file to style the whole file -->
+    <link rel="stylesheet" href="{% static 'css/personal.css' %}">
+</head>
+
+<!-- contains the content of the webpage -->
+<body>
+    <!-- container for the navigation menu (i.e. Home, About, Personal, and Contact) -->
+    <div class="container">
+        <!-- Navigation buttons -->
+        <nav>
+            <!-- Logo that when clicked, redirects to the home page -->
+            <a href="{% url 'index' %}">
+                <img src="{% static 'images/my-logo-1.png' %}" class="logo">
+            </a>
+            <ul id="sidemenu">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'personal' %}">Personal</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- contains the personal personal information -->
+    <div id="personal">
+        <div class="container">
+            <h2>Other things about me</h2>
+            <div class="personal-list">
+                <div>
+                    <h2>I play basketball</h2>
+                    <p>During Weekends, I play a lot of basketball to condition my body.</p>
+                </div>
+                <div>
+                    <h2>I play Valorant</h2>
+                    <p>Every night, I play Valorant to at least reduce my stress.</p>
+                </div>
+                <div>
+                    <h2>I play Billiards</h2>
+                    <p>Whenever we go to resorts and malls, my family and I play billiards.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright -->
+    <div class="copyright">
+        <p>Coebe Austin Lupac © 2022</p>
+    </div>
+    <script src="static/js/actions.js"></script>
+    <script src="static/js/scrollbar.js"></script>
+</body>
+</html> 

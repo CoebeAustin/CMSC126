@@ -1,0 +1,179 @@
+*{ /* Properties for the whole document webpage*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{ /* Scrollbar properties */
+    width: 0;
+}
+#scrollPath{ /* Scrollbar properties */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(rgb(255, 0, 0), rgb(0, 128, 0), rgb(0, 0, 255), alpha);
+}
+#progressbar{ /* Scrollbar properties */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    animation: animate 5s linear infinite;
+}
+@keyframes animate{ /* Scrollbar properties */
+    0%, 100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+#progressbar:before{ /* Scrollbar properties */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgb(0, 138, 255), rgb(0, 255, 231));
+    filter: blur(10px);
+}
+#progressbar:after{ /* Scrollbar properties */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgb(0, 138, 255), rgb(0, 255, 231));
+    filter: blur(30px);
+}
+body{ /* body properties */
+    background: gray;
+    color: rgb(255, 255, 255);
+}
+
+.container{ /* container for buttons properties */
+    padding: 10px 10%;
+}
+nav .fas{ /* navigation properties */
+    display: none;
+}
+nav{ /* navigation properties */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{ /* logo properties */
+    width: 200px;
+}
+
+nav ul li{ /* navigation properties */
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{ /* navigation properties */
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{ /* navigation properties hover */
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(255, 0, 79);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{ /* navigation properties after hover */
+    width: 100%;
+}
+
+/* about */
+#about{
+    padding: 80px 0;
+    color: rgb(0, 0, 0);
+}
+.row{ /* spaces between elements */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{ 
+    flex-basis: 35%;
+}
+.about-col-1 img{ /* picture properties */
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{ 
+    flex-basis: 60%;
+}
+
+.sub-title{ /* About me */
+    font-size: 60px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.tab-titles{ /* tab properties that are clicked, skills, experience, and education */
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{ /* tab properties that are clicked, skills, experience, and education, mouse is in click mode*/
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{ /* tab properties that are clicked, skills, experience, and education */
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(255, 0, 79);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{ /* tab properties that are clicked, skills, experience, and education */
+    width: 50%;
+}
+
+.tab-contents ul li{ /* tab contents below the skills, experience, and education */
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{ /* tab contents below the skills, experience, and education */
+    color: rgb(255, 0, 0);
+    font-size: 14px;
+}
+.tab-contents{ /* tab contents below the skills, experience, and education */
+    display: none;
+}
+.tab-contents.active-tab{ /* tab contents below the skills, experience, and education */
+    display: block;
+}
+
+.copyright{ /* copyright */
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    padding: 25px 0;
+    background: rgb(222, 36, 36);
+    font-weight: 300;
+    margin-top: 80px;
+}

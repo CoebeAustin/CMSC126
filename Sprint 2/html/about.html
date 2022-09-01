@@ -1,0 +1,92 @@
+<!-- loads the page -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+
+<!-- contents of the page -->
+<body>
+    <!-- scrollbar -->
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+
+    <!-- container for the menu buttons -->
+    <div class="container">
+        <nav>
+            <!-- goes to the home page if logo is clicked -->
+            <a href="{% url 'index' %}">
+                <img src="{% static 'images/my-logo-1.png' %}" class="logo">
+            </a>
+            <ul id="sidemenu">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'personal' %}">Personal</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- main contents -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <!-- self portrait of the developer -->
+                    <img src="static/images/self-portrait.jpg">
+                </div>
+                <!-- Basic information -->
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Born and raised in Quezon City, Philippines, I am currently a student studying Computer
+                        Science at the University of the Philippines - Visayas.
+                    </p>
+                    
+                    <!-- Shows the information on skills, experience, and education -->
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <!-- shows the skills -->
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>Portfolio</li>
+                            <li><span>Java</span><br>Drumpad Project</li>
+                        </ul>
+                    </div>
+                    <!-- shows the experience -->
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2020 </span><br>Started to code in Python</li>
+                            <li><span>2021 </span><br>Studied and had experience with C programming
+                            <li><span>2021 - 2022 </span><br>Studied and made a Java Project</li>
+                            <li><span>2022 - present </span><br> Had experience with PHP, MySQL, and
+                                the django backend framework</li>
+                        </ul>
+                    </div>
+                    <!-- shows the education -->
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2006 - 2014</span><br>Immaculate Mother School</li>
+                            <li><span>2014 - 2020</span><br>Far Eastern University - Diliman</li>
+                            <li><span>2020 - present</span><br>University of the Philippines - Visayas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- copyright part -->
+        <div class="copyright">
+            <p>Coebe Austin Lupac © 2022</p>
+        </div>
+    </div>
+    <script src="static/js/actions.js"></script>
+    <script src="static/js/scrollbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- loads the page -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+
+<body>
+    <!-- scrollbar  -->
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+        <div class="container">
+            <nav>
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'images/my-logo-1.png' %}" class="logo">
+                </a>
+                <ul id="sidemenu">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'personal' %}">Personal</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+            <div id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="contact-left">
+                            <h1 class="sub-title"> Contact me using the form</h1>
+                            <p>coebelupac331@gmail.com</p>
+                            <p>09998232669/09663621401</p>
+                        </div>
+                        <div class="contact-right">
+                            <form method="POST" , action="{% url 'contact' %}">
+                                {% csrf_token %}
+                                Name : <input type="text" name="name" placeholder="Your Name" required>
+                                Address : <input type="text" name="address" placeholder="Your Address (optional)">
+                                Email : <input type="email" name="email" placeholder="Your Email" required>
+                                Message : <textarea name="message" rows="6" placeholder="Your Message"
+                                    required></textarea>
+                                <button onclick="alert('Your message has been submitted to the developer. Have a nice day!') 
+                            " type="submit" class="btn btn2">Submit</button>
+                            </form>
+                            <span id="msg"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Coebe Austin Lupac © 2022</p>
+        </div>
+    <script src="static/js/scrollbar.js"></script>
+</body>
+</html>

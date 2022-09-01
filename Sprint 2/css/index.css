@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{ /* Scrollbar properties */
+    width: 0;
+} 
+#scrollPath{ /* Scrollbar properties */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(red, green, blue, alpha);
+}
+#progressbar{ /* Scrollbar properties */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to top, rgb(0, 138, 255), rgb(0, 255, 231));
+    animation: animate 5s linear infinite;
+}
+@keyframes animate{ /* Scrollbar properties */
+    0%, 100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+#progressbar:before{ /* Scrollbar properties */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgb(0, 138, 255), rgb(0, 255, 231));
+    filter: blur(10px);
+}
+#progressbar:after{ /* Scrollbar properties */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgb(0, 138, 255), rgb(0, 255, 231));
+    filter: blur(30px);
+}
+body{ /* body properties */
+    background: gray;
+    color: rgb(255, 255, 255);
+}
+
+#header{ /* header properties */
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.container{ /* container properties */
+    padding: 10px 10%; 
+}
+
+nav{ /* navigation properties */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{ /* logo properties */
+    width: 200px;
+}
+
+nav .fas{ /* navigation buttons stay intact like the navigation buttons on other pages */
+    display: none;
+}
+
+nav ul li{ /* navigation properties */
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{  /* navigation properties */
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{  /* navigation properties */
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(255, 0, 79);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+} 
+nav ul li a:hover::after{  /* navigation properties */
+    width: 100%;
+}
+
+.header-text{  /* header properties */
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{ /* header properties */
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{ /* header properties */
+    color: rgb(255, 0, 79);
+}
+
+.copyright{ /* copyright properties */
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: rgb(222, 36, 36);
+    font-weight: 300;
+    margin-top: 20px;
+}
+
